@@ -1,14 +1,33 @@
 <html lang="en">
   <head>
     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-10953930330"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'AW-10953930330');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-10953930330"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+  
+      gtag('config', 'AW-10953930330');
+    </script>
+  
+    <!-- Google tag (gtag.js) event - delayed navigation helper -->
+    <script>
+      // Helper function to delay opening a URL until a gtag event is sent.
+      // Call it in response to an action that should navigate to a URL.
+      function gtagSendEvent(url) {
+        var callback = function () {
+          if (typeof url === 'string') {
+            window.location = url;
+          }
+        };
+        gtag('event', 'contact', {
+          'event_callback': callback,
+          'event_timeout': 2000,
+          // <event_parameters>
+        });
+        return false;
+      }
+    </script>
     
     <!-- 
     More Templates Visit ==> ProBootstrap.com
@@ -148,7 +167,12 @@
           <div class="col-md-12">
             <h2 class="heading mb-3">Consúltenos</h2>
             <p class="sub-heading mb-5 pb_color-light-opacity-8">Si tiene alguna pregunta, rellene el formulario de contacto y le responderemos a la brevedad.</p>
-            <p><a href="contact.html" role="button" class="btn smoothscroll pb_outline-light p-3 rounded-0 pb_font-13 pb_letter-spacing-2">Contacto</a></p>
+            <p>
+              <a href="contact.html" role="button" class="btn smoothscroll pb_outline-light btn-xl pb_font-13 p-4 rounded-0 pb_letter-spacing-2" 
+                 onclick="return gtagSendEvent('contact.html');">
+                Contacto
+              </a>
+            </p>
           </div>  
         </div>
 
