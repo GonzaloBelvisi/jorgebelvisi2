@@ -10,23 +10,13 @@
       gtag('config', 'AW-10953930330');
     </script>
   
-    <!-- Google tag (gtag.js) event - delayed navigation helper -->
+    <!-- Event snippet for Contacto 2.0 conversion page -->
     <script>
-      // Helper function to delay opening a URL until a gtag event is sent.
-      // Call it in response to an action that should navigate to a URL.
-      function gtagSendEvent(url) {
-        var callback = function () {
-          if (typeof url === 'string') {
-            window.location = url;
-          }
-        };
-        gtag('event', 'contact', {
-          'event_callback': callback,
-          'event_timeout': 2000,
-          // <event_parameters>
-        });
-        return false;
-      }
+      gtag('event', 'conversion', {
+          'send_to': 'AW-10953930330/gzLKCJDDptMZENrsnuco',
+          'value': 1.0,
+          'currency': 'USD'
+      });
     </script>
     
     <!-- 
